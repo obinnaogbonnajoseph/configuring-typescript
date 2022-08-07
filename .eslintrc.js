@@ -12,5 +12,9 @@ module.exports = {
         browser: true,
         node: true
     },
-    ignorePatterns: ["dist/js", "bin/"]
+    rules: {
+        "no-unused-vars": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    },
+    ignorePatterns: ["dist/js", "bin/"],
 };
