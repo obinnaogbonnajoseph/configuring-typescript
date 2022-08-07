@@ -1,9 +1,9 @@
 {
-    "extends": "@tsconfig/node16/tsconfig.json",
+    "extends": "@tsconfig/recommended/tsconfig.json",
     "compilerOptions":{
         "outDir": "./dist/js",
         "sourceMap": true,
-        "lib": ["es2021", "dom"]
+        "lib": ["es2015", "dom"],
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "dist"],
