@@ -30,6 +30,7 @@ export class Main {
 
     }
 
+    // eslint-disable-next-line no-unused-vars
     constructor(private ticketInfo : TicketSchema[]) {}
 
 }
