@@ -1,8 +1,16 @@
 {
+    "extends": "@tsconfig/node16/tsconfig.json",
     "compilerOptions":{
         "outDir": "./dist/js",
         "sourceMap": true,
+        "lib": ["es2021", "dom"]
     },
-    "include": ["src/index.ts"],
-    "exclude": ["node_modules"]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"],
+    "watchOptions": {
+        "excludeDirectories": ["**/node_modules", "dist"]
+    },
+    "references": [
+        {"path": "./src/interfaces"}
+    ]
 }
