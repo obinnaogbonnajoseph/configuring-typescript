@@ -1,4 +1,6 @@
 import { TicketSchema } from '../interfaces';
+import { emphasizeString } from '../../lib/language.js';
+import * as _ from "lodash";
 
 export class Main {
     
@@ -6,7 +8,7 @@ export class Main {
 
         return `
             <div class="mt-4">
-              <h2>Globoticket Portal</h2>
+              <h2>${emphasizeString("Globoticket Portal", 2)}</h2>
               <table class="table-bordered">
               <thead>
                 <th class="p-2">Concert Name</th>
@@ -15,7 +17,7 @@ export class Main {
               </thead>
               <tbody>
 
-                    ${this.ticketInfo.map(ticket => `<tr>
+                    ${_.uniq(_.shuffle(this.ticketInfo)).map(ticket => `<tr>
                         <td class="p-2">${ticket.concertName}</td>
                         <td class="p-2">${ticket.price}</td>
                         <td class="p-2">${ticket.quantity}</td>
@@ -30,7 +32,6 @@ export class Main {
 
     }
 
-    // eslint-disable-next-line no-unused-vars
     constructor(private ticketInfo : TicketSchema[]) {}
 
 }
